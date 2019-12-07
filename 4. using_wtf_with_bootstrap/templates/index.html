@@ -1,0 +1,21 @@
+{% extends "bootstrap/base.html" %}
+{% import "bootstrap/wtf.html" as wtf %}
+{% block title %}
+WTForms
+{% endblock %}
+
+{% block content %}
+<div class="container">
+  <h1>Flask Form</h1>
+  <form action="/" method="post">
+    <!--{{ form.csrf_token }}
+    {{ wtf.form_field(form.username) }}
+    {{ wtf.form_field(form.password) }}
+    Relatively long way of doing this-->
+    {{ wtf.quick_form(form)}}
+    <!-- use quickform for default bootstrap decoration-->
+
+    <input type="submit" value="Login" class="btn-primary">
+  </form>
+</div>
+{% endblock %}

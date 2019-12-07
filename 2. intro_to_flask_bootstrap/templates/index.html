@@ -1,0 +1,32 @@
+{% extends "bootstrap/base.html" %}
+
+{% block title %}This is an example page{% endblock %}
+
+{% block navbar %}
+<div class="navbar navbar-default">
+  <!-- ... -->
+
+</div>
+{% endblock %}
+
+{% block content %}
+<div class="container">
+  <h1>Amazon a Mercadolibre API</h1>
+  <p>With this API you'll be able to extract products from Amazon.com masively
+  and publish those directly into mercadolibre.com.co.</p>
+  <form method = "post" action = "/query">
+    <div class="form-group" >
+      <input class="form-control form-control-lg" name="q" type="text" placeholder="What you want to publish">
+      <br>
+      <button class="btn btn-primary btn-lg" type="submit">Search for it</button>
+    </div>
+  </form>
+
+</div>
+
+{% endblock %}
+
+{% block scripts %}
+{{super()}}<!--whitout super the block overrides the data provided
+            by bootstrap-->
+{% endblock %}

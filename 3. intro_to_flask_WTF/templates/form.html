@@ -1,0 +1,22 @@
+{% from "_render_field.html" import render_field %}
+
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>FLask WTF</title>
+  </head>
+  <body>
+    <h1>Flask WTForms</h1>
+    <form action="{{ url_for('form')}}" method="post">
+      <!--<input type="username" name="" value="">-->
+
+      {{ form.csrf_token }}
+      {{ render_field(form.username) }}
+      {{ render_field(form.password) }}
+      {{ render_field(form.recaptcha) }}
+      <input type="submit" value="submit">
+    </form>
+
+  </body>
+</html>

@@ -1,0 +1,22 @@
+{% extends "bootstrap/base.html" %}
+{% import "bootstrap/wtf.html" as wtf %}
+
+{% block title%}
+Sign In
+{% endblock %}
+
+
+{% block content %}
+<div class="container">
+  <h1>Sign In</h1><br>
+  <form action="/sign_in" method="post">
+    {{ form.csrf_token }}
+    {{ wtf.form_field(form.email) }}
+    {{ wtf.form_field(form.password) }}
+    <button type="submit" class="btn btn-lg btn-primary btn-block">Sign In</button>
+  </form>
+  <br>
+  <h4>If you don't have an account, let's <a href="{{url_for('sign_up')}}">Sign up</a></h4>
+</div>
+
+{% endblock %}

@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>Example Template!</title>
+  </head>
+  <body>
+    {% if myvar %}
+    <h1>Displaying a variable passed in is: {{ myvar}}</h1>
+    {% else %}
+    <h1>NO variable passed in :(</h1>
+    {% endif %}
+    <h1>This is an example template</h1>
+    <p>Wabalabah dob dob</p>
+
+    {% if links %}
+    <ul>
+      {% for link in links %}
+      <li><a href="{{link}}"> Link to {{link}}</a></li>
+      {% endfor %}
+    </ul>
+    {% endif %}
+
+    <h3>End of the template</h3>
+  </body>
+</html>

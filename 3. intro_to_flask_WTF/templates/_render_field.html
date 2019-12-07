@@ -1,0 +1,10 @@
+{% macro render_field(field) %}
+{{ field.label }}
+{{ field(**kwargs) | safe }} <!--exclude arguments passed for any auto skips-->
+  <ul>
+    {% for error in field.errors %}
+        <li style="color:red;">{{ error }}</li>
+    {% endfor %}
+  </ul>
+
+{% endmacro %}
